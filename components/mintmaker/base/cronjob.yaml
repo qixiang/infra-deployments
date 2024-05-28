@@ -1,0 +1,42 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: create-dependencyupdatecheck
+spec:
+  schedule: "0 */2 * * *" # every 2 hours
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers: # TODO add the container image
+            - name: origin-cli
+              image: "quay.io/openshift/origin-cli:4.14"
+              command: 
+              - /bin/sh
+              - -c
+              - |
+                cat <<EOF | oc create -f -
+                apiVersion: appstudio.redhat.com/v1alpha1
+                kind: DependencyUpdateCheck
+                metadata:
+                  labels:
+                    app.kubernetes.io/name: dependencyupdatecheck
+                    app.kubernetes.io/part-of: mintmaker
+                    app.kubernetes.io/managed-by: kustomize
+                    app.kubernetes.io/created-by: mintmaker
+                  generateName: dependencyupdatecheck-
+                spec:
+                EOF
+          restartPolicy: OnFailure
+              resources:
+                requests:
+                  cpu: 100m
+                  memory: 10Mi
+                limits:
+                  cpu: 100m
+                  memory: 100Mi
+              securityContext:
+                readOnlyRootFilesystem: true
+                runAsNonRoot: true
+          restartPolicy: OnFailure
+          serviceAccountName: mintmaker-admin

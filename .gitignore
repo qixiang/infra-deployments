@@ -5,3 +5,5 @@ components/spi/base/config.yaml
 .tmp/
 tmp
 .idea/*
+*.swp 
+*.swo
