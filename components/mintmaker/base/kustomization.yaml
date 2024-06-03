@@ -1,9 +1,9 @@
 resources:
 - cronjob.yaml
 - external-secrets
-- mintmaker-config.yaml
 - mintmaker-team.yaml
 - rbac
+- renovate-config.yaml
 
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
