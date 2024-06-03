@@ -2,10 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base
-  - ../base/external-secrets
-  - ../base/rbac
-  - ../base/cronjob.yaml
-  - ../base/mintmaker-config.yaml
   - https://github.com/konflux-ci/mintmaker/config/default?ref=c89f957b73793716aa10ce2373ecce4306556472
 
 components:
