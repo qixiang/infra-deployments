@@ -10,6 +10,6 @@ components:
 images:
   - name: quay.io/konflux-ci/mintmaker
     newName: quay.io/konflux-ci/mintmaker
-    newTag: 9e3dd3bfec43fbbae2d2dfb931f3f3cb082ae9af
+    newTag: c89f957b73793716aa10ce2373ecce4306556472
 
 namespace: mintmaker
