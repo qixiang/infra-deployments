@@ -11,5 +11,8 @@ images:
 
 namespace: mintmaker
 
+commonAnnotations:
+  argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+
 components:
   - ../components/rh-certs
