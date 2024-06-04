@@ -1,6 +1,5 @@
 resources:
 - cronjob.yaml
-- external-secrets
 - mintmaker-team.yaml
 - rbac
 - renovate-config.yaml
