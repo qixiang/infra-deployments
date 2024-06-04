@@ -28,8 +28,8 @@ data:
             "matchDepPatterns": [
               "^quay.io/redhat-appstudio-tekton-catalog/"
             ],
-            "semanticCommits": "enabled",
+            "semanticCommits": "enabled"
           }
         ]
-      },
+      }
     }
