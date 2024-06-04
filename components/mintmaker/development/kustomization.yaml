@@ -10,3 +10,6 @@ images:
     newTag: c89f957b73793716aa10ce2373ecce4306556472
 
 namespace: mintmaker
+
+components:
+  - ../components/rh-certs
