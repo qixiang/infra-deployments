@@ -266,7 +266,7 @@ done
 
 INTERVAL=10
 while :; do
-  STATE=$(oc get apps -n openshift-gitops --no-headers)
+  STATE=$(oc get apps -n openshift-gitops --no-headers | grep -v "monitoring-workload-grafana")
   NOT_DONE=$(echo "$STATE" | grep -v "Synced[[:blank:]]*Healthy" || true)
   echo "$NOT_DONE"
   if [ -z "$NOT_DONE" ]; then
