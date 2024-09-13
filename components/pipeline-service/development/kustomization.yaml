@@ -39,6 +39,9 @@ patches:
         path: /spec/template/spec/containers/0/securityContext/runAsUser
       - op: remove
         path: /spec/template/spec/containers/0/securityContext/runAsGroup
+      - op: replace
+        path: /spec/template/spec/containers/0/image
+        value: quay.io/minio/operator:v5.0.15
   - target:
       kind: Deployment
       name: console
@@ -60,3 +63,6 @@ patches:
       - op: add
         path: /spec/template/spec/containers/0/securityContext/readOnlyRootFilesystem
         value: true
+      - op: replace
+        path: /spec/template/spec/containers/0/image
+        value: quay.io/minio/operator:v5.0.15
